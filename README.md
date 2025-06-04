@@ -36,8 +36,14 @@ Finished job #1
 ```
 
 ## Future Ideas
-- [ ] Add priority scheduling
-- [ ] Add preemptive scheduling using context cancel
-- [ ] Track job stats and lifecycle
-- [ ] CLI dashboard with tview
+## Future Ideas
+- [ ] Add priority scheduling to allow high-importance jobs to run earlier
+- [ ] Add preemptive scheduling using `context.Context` to simulate timeouts and interrupts
+- [ ] Track job execution statistics and history (start time, end time, duration)
+- [ ] Add retry logic for failed jobs
+- [ ] Implement job cancellation and pausing/resuming
+- [ ] CLI dashboard with [tview](https://github.com/rivo/tview) to monitor job queue in real time
+- [ ] Add persistent job queue using BoltDB or SQLite
+- [ ] Support worker pool with configurable concurrency limits
+- [ ] REST API to submit and monitor jobs
 
