@@ -7,9 +7,9 @@ import (
 )
 
 func main() {
-	s := scheduler.NewScheduler(2 * time.Second)
+	s := scheduler.NewScheduler(3) // 3 workers
 
-	for i := 1; i <= 5; i++ {
+	for i := 1; i <= 10; i++ {
 		id := i
 		s.AddJob(scheduler.Job{
 			ID: id,
@@ -19,6 +19,7 @@ func main() {
 			},
 		})
 	}
-	fmt.Println("Starting Round-Robin Scheduler...")
-	s.StartRoundRobin()
+	fmt.Println("Starting Work-Stealing Scheduler...")
+	s.Start()
+	time.Sleep(10 * time.Second) // let workers finish
 }

@@ -3,8 +3,7 @@ package scheduler
 import "fmt"
 
 type Job struct {
-	ID int
-	Priority int 
+	ID   int
 	Work func()
 }
 
